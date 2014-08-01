@@ -14,22 +14,22 @@ new RMIConnect(socket).getBind()
 Example.
 
 public interface Agent{
-  public String getName();
+    public String getName();
 }
 
 Server:
 ServerSocket serverSocket=new ServerSocket(1234);
 while(true){
-  Agent agent=new RMIConnection(serverSocket.accpet()).getBind();
-  System.out.println(agent.getName() + " is connected";
+    Agent agent=new RMIConnection(serverSocket.accpet()).getBind();
+    System.out.println(agent.getName() + " is connected";
 }
 
 Client:
 new RMIConnection(new Socket("localhost", 1234), new Agent(){
-  @Override
-  public String getName(){
-    return "Client";
-  }
+    @Override
+    public String getName(){
+        return "Client";
+    }
 });
 
 Notice only two kind of objects can be trasferred through XRMI
