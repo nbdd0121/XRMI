@@ -216,7 +216,7 @@ public class BindHelper {
 			if(sub.getSuperclass()!=null){
 				return getBindingInterface(sub.getSuperclass());
 			}else{
-				throw new RuntimeException("Cannot Find proper interface class");
+				throw new RuntimeException("No suitable bind interface for "+sub);
 			}
 		}
 		return c[0];
