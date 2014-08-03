@@ -186,6 +186,7 @@ public class RMIConnection {
 	private synchronized void send(Package pack) throws IOException{
 		out.writeObject(pack);
 		out.flush();
+		out.reset();
 	}
 	
 	Object invoke(Object obj, String str, Object... args){
